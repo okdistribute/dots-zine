@@ -17,6 +17,7 @@ var emitter = new(require('events').EventEmitter)()
 
 var fs = require('fs')
 var icons = (function () {
+  document.body.style = "background-color:#131f26"
   var div = document.createElement('div')
   div.innerHTML = fs.readFileSync(__dirname + '/icons.svg', 'utf8')
   var root = div.children[0]
@@ -446,7 +447,7 @@ function frame () {
   regl.poll()
   update(performance.now()/1000)
   updateModels()
-  regl.clear({ color: [0,0,.1,1], depth: true })
+  regl.clear({ color: [0,0,0,0], depth: true })
   camera(function () {
     draw.paper(paperProps)
   })
