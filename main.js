@@ -246,7 +246,7 @@ Object.keys(papers).forEach(function (key) {
   papers[key].offset = [0,0,0]
 })
 
-var file = 'decent.png'
+var file = 'decent-small.png'
 var pageOffset = 5
 var zine = regl.texture()
 
@@ -426,7 +426,7 @@ function frame () {
   regl.poll()
   update(performance.now()/1000)
   updateModels()
-  regl.clear({ color: [0.2,0.0,0.2,1], depth: true })
+  regl.clear({ color: [0,0.0,0,0], depth: true })
   camera(function () {
     draw.paper(paperProps)
   })
