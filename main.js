@@ -147,10 +147,6 @@ window.addEventListener('mousemove', function (ev) {
   state.prevMouse[0] = ev.clientX
   state.prevMouse[1] = ev.clientY
 })
-window.addEventListener('wheel', function (ev) {
-  state.zoom = clamp(0.25,1.5,state.zoom + ev.deltaY*0.001)
-  frame()
-})
 
 var camera = (function () {
   var projection = new Float32Array(16)
